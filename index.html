@@ -9,13 +9,13 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play The Silence on Voss.</tw-noscript></noscript></tw-story>
-<tw-storydata name="The Silence on Voss" startnode="1" creator="Twine" creator-version="2.3.12" ifid="ADD844FE-03A6-4C82-BF85-1706B628B341" zoom="1" format="Harlowe" format-version="3.2.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Start" tags="nofooter" position="830,31" size="100,100">(set: $class to &quot;&quot;)
+<tw-storydata name="The Silence on Voss" startnode="1" creator="Twine" creator-version="2.3.12" ifid="ADD844FE-03A6-4C82-BF85-1706B628B341" zoom="1" format="Harlowe" format-version="3.2.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Start" tags="nofooter" position="828,32" size="100,100">(set: $class to &quot;&quot;)
 (set: $forceside to &quot;&quot;)
 (set: $forcepoints to 0)
 To start, we&#39;re going to make some assumptions //and// some choices!
 
 First off: What&#39;s your name?
-(input-box:2bind $playername,&quot;X&quot;,1,&quot;Enter Your Name Here&quot;)
+(input-box:2bind $playername,&quot;X=&quot;, 1,&quot;Enter Your Name Here&quot;)
 
 Let&#39;s assume that you are playing an end-game character, a level 70 (cycling-link: bind $class, &quot;Trooper&quot;,&quot;Smuggler&quot;,&quot;Jedi Knight&quot;,&quot;Jedi Consular&quot;,&quot;Bounty Hunter&quot;,&quot;Imperial Agent&quot;,&quot;Sith Warrior&quot;,&quot;Sith Inquisitor&quot;,&quot;Trooper&quot;). 
 You primarily lean towards the (cycling-link: bind $forceside, &quot;Light&quot;,&quot;Dark&quot;,&quot;Neutral&quot;) Side. 
@@ -29,13 +29,7 @@ Who do you want to have romanced?
 (cycling-link: bind $romanced, &quot;No one&quot;,&quot;Han-Re&quot;,&quot;Sesh-De&quot;,&quot;Ryss Zam&quot;)
 
 [[Continue-&gt;Pick A Side Start]] (replace: ?class)[$class](replace: ?romanced)[$romanced]
-</tw-passagedata><tw-passagedata pid="2" name="Ryss Zam Start" tags="" position="626,384" size="100,100">hahsdahsdasd
-Fucking test for ryss zam page wtf
-work dammit
-
-this shit is confrontation of Ryss to Player depending on their prev choices
-
-(if:$fnum is 2)[(set:$forcepoints to it - 100)](else-if:$fnum is 3)[(set:$forcepoints to it - 150)]
+</tw-passagedata><tw-passagedata pid="2" name="Ryss Zam Start" tags="" position="626,384" size="100,100">(if:$fnum is 2)[(set:$forcepoints to it - 100)](else-if:$fnum is 3)[(set:$forcepoints to it - 150)]
 
 (if:$fnum is 2)[You helped Ryss Zam&#39;s Gang insert shit here](else-if: $fnum is 3)[You looked out for yourself, instert shit here.](else-if:$fnum is 1)[Something messed up somewhere, because your faction is $faction and you&#39;re on this passage.]
 
@@ -72,12 +66,10 @@ Romanced: [&#39;&#39;$romanced&#39;&#39;]&lt;romanced|
 Alright! Let&#39;s just confirm your choices:
 
 You are $playername, $forceside side $class and lover of $romanced.
-(if: $fnum is 1)[You helped the Voss and Gormak reclaim ruined lands and artefacts.](if: $fnum is 2)[You helped the gangster Ryss Zam and their notorious gang.](if: $fnum is 3)[You looked out for yourself most of all, unconcerned for others.]
+(if: $fnum is 1)[You helped the Voss and Gormak reclaim ruined lands and artefacts.](else-if: $fnum is 2)[You helped the gangster Ryss Zam and their notorious gang.](else-if: $fnum is 3)[You looked out for yourself most of all, unconcerned for others.]
 
 If this all looks correct, let&#39;s (if:$fnum is 1)[[[Continue-&gt;Voss Start]]](else-if:$fnum &gt; 1)[[[Continue-&gt;Ryss Zam Start]]]
-If you need to make changes, let&#39;s (link:&quot;Go Back&quot;)[(restart:)].</tw-passagedata><tw-passagedata pid="7" name="HelpRomRyss" tags="" position="524,164.5" size="100,100">This is the path for Helping and Romancing Ryss</tw-passagedata><tw-passagedata pid="8" name="BetrayRomRyss" tags="" position="522,274.5" size="100,100">This is the passage for Betraying and Romance Ryss
-
-After a whirlwind of cutting down and through Ryss Zam&#39;s gang to get to the valuable Voss artifacts they are smuggling, you have at last pilfered every profitable piece you can find. After setting a few timed detonators, you get a holocall from Ryss. They are confused, waking up to find you gone. They are barely able to make out the destruction behind you before you hang up.
+If you need to make changes, let&#39;s (link:&quot;Go Back&quot;)[(restart:)].</tw-passagedata><tw-passagedata pid="7" name="HelpRomRyss" tags="" position="524,164" size="100,100">This is the path for Helping and Romancing Ryss</tw-passagedata><tw-passagedata pid="8" name="BetrayRomRyss" tags="" position="522,274" size="100,100">After a whirlwind of cutting down and through Ryss Zam&#39;s gang to get to the valuable Voss artifacts they are smuggling, you have at last pilfered every profitable piece you can find. After setting a few timed detonators, you get a holocall from Ryss. They are confused, waking up to find you gone. They are barely able to make out the destruction behind you before you hang up.
 
 You barely make it out of the cave with the last of the laden hovercraft when it explodes, deafening the cries of the wounded trapped inside. Whistling a jaunty tune, you bring your cargo back to your ship.
 
